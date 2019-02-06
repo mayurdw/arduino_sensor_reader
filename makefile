@@ -2,16 +2,16 @@
 
 BOARD_TAG    = uno
 USER_LIB_PATH = $(HOME)/Documents/code/arduino_sensor_reader
-ARDUINO_LIBS += voltage
-VOLTAGE_ARCHIVE = build-uno/libvoltage.a
+ARDUINO_LIBS += Arduino-Log
+LOG_ARCHIVE = build-$(BOARD_TAG)/liblog.a 
 
-CXXFLAGS += -Ivoltage
-OTHER_OBJS = voltage/$(VOLTAGE_ARCHIVE)
+CXXFLAGS += -IArduino-Log
+OTHER_OBJS = Arduino-Log/$(LOG_ARCHIVE)
 
 include /usr/share/arduino/Arduino.mk
 
-voltage/$(VOLTAGE_ARCHIVE):
-	$(MAKE) -C voltage $(VOLTAGE_ARCHIVE)
+Arduino-Log/$(LOG_ARCHIVE):
+	$(MAKE) -C Arduino-Log $(LOG_ARCHIVE)
 
 clean::
-	$(MAKE) -C voltage clean
+	$(MAKE) -C Arduino-Log clean

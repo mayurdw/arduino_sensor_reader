@@ -6,7 +6,8 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "make clean"
+            "command": "make clean",
+            "problemMatcher": []
         },
         {
             "label": "build",
@@ -15,7 +16,8 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "upload",
@@ -25,6 +27,12 @@
                 "kind": "test",
                 "isDefault": true
             }
+        },
+        {
+            "label": "log",
+            "type": "shell",
+            "command": "screen /dev/ttyUSB0 115200",
+            "problemMatcher": []
         }
     ]
 

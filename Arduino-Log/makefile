@@ -9,5 +9,5 @@
 
 include /usr/share/arduino/Arduino.mk
 
-build-uno/libvoltage.a: $(LOCAL_OBJS)
+build-uno/liblog.a: $(LOCAL_OBJS)
 	$(AR) rcs $@ $(LOCAL_OBJS)
