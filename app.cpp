@@ -48,35 +48,42 @@ class Temperature : public Voltage
   public:
     Temperature(int iPin) : Voltage(iPin)
     {
-
     }
     inline float GetCelcius()
     {
+        TakeReading();
+        PrintReading();
         return ( GetReading() * ( 5.0 / ( 1.1 * 10 ) ) );
     }
 };
 
-static int
-BeginAppLogs(void)
+static const int s_iVccPin = 7;
+
+static int BeginAppLogs(void)
 {
     init();
+    pinMode(s_iVccPin, OUTPUT);
     Serial.begin(115200);
     Log.begin(LOG_LEVEL_VERBOSE, &Serial, true);
     Log.notice(F("------------- HELLO WORLD! -------------" CR));
     return 0;
 }
 
+// Darkness = 0.04V
+// Torch = 4.73V
 int main()
 {
-    BeginAppLogs();
     Temperature cSensor1(0);
-    analogWrite(A5,5);
-    
+    Voltage cLight(1), cSoil(2);
+
+    BeginAppLogs();
+    digitalWrite(s_iVccPin, HIGH);
+
     while (true)
     {
-        cSensor1.TakeReading();
-        cSensor1.PrintReading();
-        Log.notice(F("Temperature = %F C" CR), (cSensor1.GetCelcius() ));
+        Log.notice(F("Temperature = %F C" CR), (cSensor1.GetCelcius()));
+        Log.notice(F("Light Intensity = %i %%" CR), map(cLight.GetVolts(), 0.04, 4.73, 0, 100) );
+        Log.notice(F("Soil Moisture = %i %%" CR), map(cSoil.GetReading(), 0, 1023, 0, 100) );
         delay(1000); // wait for a second
     }
 }

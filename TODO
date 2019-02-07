@@ -4,4 +4,5 @@ Todo:
   ✔ Create makefile for libraries @done(19-02-05 22:42)
   ✔ Create a function to print messages @done(19-02-06 15:23)
   ✔ Create a class/struct for voltages @done(19-02-06 17:36)
-  
+  ✔ Use Light sensor @done(19-02-07 21:46)
+  ✔ Use Soil Moisture sensor @done(19-02-07 21:46)
