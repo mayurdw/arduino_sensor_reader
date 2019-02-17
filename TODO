@@ -6,3 +6,10 @@ Todo:
   ✔ Create a class/struct for voltages @done(19-02-06 17:36)
   ✔ Use Light sensor @done(19-02-07 21:46)
   ✔ Use Soil Moisture sensor @done(19-02-07 21:46)
+  ✔ Create Vcc pins for each @done(19-02-17 16:28)
+  ✔ Fix mapping for each @done(19-02-17 16:38)
+  ✔ Add a button to the current circuit @done(19-02-17 17:19)
+  ✔ Button Sleep mode @done(19-02-17 17:55)
+  ✘ Create a more optimum way to assign output pins @cancelled(19-02-17 17:58)
+  ☐ Phase 2: 
+  ☐ LCD Display only

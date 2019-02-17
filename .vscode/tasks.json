@@ -31,7 +31,7 @@
         {
             "label": "log",
             "type": "shell",
-            "command": "screen /dev/ttyUSB1 115200",
+            "command": "screen /dev/ttyUSB0 115200",
             "problemMatcher": []
         }
     ]
